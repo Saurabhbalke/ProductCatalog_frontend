@@ -1,0 +1,25 @@
+<!-- Navigation Bar -->
+<nav class="navbar navbar-dark bg-dark px-3">
+  <a class="navbar-brand" href="#">ShoppingCart</a>
+  <button class="btn btn-primary" (click)="openModal()">Add Product</button>
+</nav>
+
+<!-- Product List -->
+<div class="container mt-4">
+  <app-product-list></app-product-list>
+</div>
+
+<!-- Modal for Adding Product -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalLabel">Add New Product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-product-form (productAdded)="closeModal()"></app-product-form>
+      </div>
+    </div>
+  </div>
+</div>
